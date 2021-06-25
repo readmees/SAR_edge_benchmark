@@ -7,4 +7,6 @@ To evaluate these confusion matrices [a Jupyter Notebook](https://github.com/rea
 
 The .csv files should be named '\[edge detector name\]\_measures.csv'.
 
-For questions and further explaination you are welcome to contact contact@meesmeester.nl.
+In [the thesis](https://github.com/readmees/SAR_edge_benchmark/blob/main/Thesis___Detecting_geometric_primitives_in_SAR_images%20(1).pdf) we refer to the real SAR images, since they did not fit in the appendix, these can be found [here](https://github.com/readmees/SAR_edge_benchmark/tree/main/ODESSA_data).
+
+For questions and further explaination you are welcome to contact contact@meesmeester.nl by email.
