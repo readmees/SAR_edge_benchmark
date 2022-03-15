@@ -1,13 +1,16 @@
-The thesis is temporarilly removed, but will be added later
 # SAR edge benchmark
-This GitHub repository contains the information needed to evaluate on a simulated SAR edge detection benchmark. For more information about this benchmark you can refer to [this thesis](https://github.com/readmees/SAR_edge_benchmark/blob/main/Thesis___Detecting_geometric_primitives_in_SAR_images%20(1).pdf). The data can be generated with the code from Chenguang on [this GitHub repository](https://github.com/ChenguangTelecom/GRHED). We denoised the images with SARBLF from [this repository](https://github.com/odhondt/ndsar) as decriped in [the thesis](https://github.com/readmees/SAR_edge_benchmark/blob/main/Thesis___Detecting_geometric_primitives_in_SAR_images%20(1).pdf). To evaluate the performance of new edge detectors the confusion matrices for the data ground truths should created for 21 different thresholds (0, 0.05 ..., 0.95, 1) and all the 28800 training images created from [here](https://github.com/ChenguangTelecom/GRHED).
+This GitHub repository contains information needed to evaluate on the simulated SAR edge detection benchmark described in [this paper](paperlink). Evaluating other edge detectors can be done in 4 steps
 
-To evaluate these confusion matrices [a Jupyter Notebook](https://github.com/readmees/SAR_edge_benchmark/blob/main/Evaluation%20of%20the%20edge%20detectors.ipynb) file has been added to this GitHub repository. It evaluates .csv files in the format shown in the DataFrame representation of example .csv file:
+## Step 1: Preparing the dataset
+The BSDS500-speckled dataset can be generated with the code on [this GitHub repository](https://github.com/ChenguangTelecom/GRHED) further described by Chenguang. We denoised the images with SARBLF from [this repository](https://github.com/odhondt/ndsar), see the paper for parameter settings. The real SAR images of Lelystad, Flevoland, Netherlands and Odessa, Texas, United States shown in the paper can also be downloaded from this repository.
 
-<img src="https://github.com/readmees/SAR_edge_benchmark/blob/main/format_confusion_matrices.png" width="400">
+## Step 2: Creating edge response maps - training
+For parameter tuning you can use the 28800 augmented speckled training images from [BSDS500-speckled](https://github.com/ChenguangTelecom/GRHED), use any edge detector of your choice.
 
-The .csv files should be named '\[edge detector name\]\_measures.csv'.
+## Step 3: Evaluating edge response maps - training
+To evaluate the performance of new edge detectors the same way as the confusion matrices for the data ground truths should created for 21 different thresholds: 0, 0.05 ..., 0.95, 1. The confusion matrices should be stored in a Pandas dataframe with 28800 rows × 21 columns, one row for every image, with the 21 threshold values. Every confusion matrix should have the following format: ```"{'tn': 100368, 'fp': 99090, 'fn': 1530, 'tp': 7908}"```, which can be seen as a dictionary stored in a string. The Pandas dataframe should be saved as a .csv file, see [this file](faridlink) as an example, used for the Farid edge detector evaluations in the paper.  The [Jupyter Notebook](notebooklink) will easilly create the ROC curves and metrics. For this program to smoothly work, the .csv files should be named '\[edge detector name\]\_measures.csv'.
 
-In [the thesis](https://github.com/readmees/SAR_edge_benchmark/blob/main/Thesis___Detecting_geometric_primitives_in_SAR_images%20(1).pdf) we refer to the real SAR images, since they did not fit in the appendix, these can be found [here](https://github.com/readmees/SAR_edge_benchmark/tree/main/ODESSA_data).
+## Step 4: Evaluating edge respons maps - test
+For qualitative evaluations of the real SAR images, you can compare with the methods in the paper. For the OIS (F1), ODS (F1), AP and ODS (F1) Threshold for the BSDS500-speckled Benchmark can be evaluated by applying a [Python port of BSDS 500 boundary prediction evaluation suite](https://github.com/Britefury/py-bsds500.git) with 30 thresholds.
 
-For questions and further explaination you are welcome to contact contact@meesmeester.nl by email.
+If you use this benchmark or have any questions, please let me know and contact me at contact@meesmeester.nl.
