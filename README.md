@@ -1,4 +1,4 @@
-__The paper is not officially published yet, so the urls are not pointing towards the paper yet.__
+__Currently the paper is not published, so the urls are not pointing towards the paper.__
 # SAR edge benchmark
 This GitHub repository contains information needed to evaluate on the simulated SAR edge detection benchmark described in [this paper](paperlink). The results of the evaluations on BSDS500-speckled are shown in the following table:  
 _BSDS500-speckled Benchmark. The rows are sorted by OIS F1. The best results are highlighted
