@@ -1,10 +1,14 @@
 __The paper is currently being reviewed, so the paper is not publically availably yet.__
 # SAR edge benchmark
 This GitHub repository contains information needed to evaluate on the simulated SAR edge detection benchmark described in [this paper](paperlink). The results of the evaluations on BSDS500-speckled are shown in the following table:  
-_BSDS500-speckled Benchmark. The rows are sorted by OIS F1. The best results are highlighted
+_BSDS500-speckled Benchmark. The rows are sorted by ODS F1. The best results are highlighted
 in bold, while the second best results are underlined._
-![](https://github.com/readmees/SAR_edge_benchmark/blob/main/BSDS500-speckled%20Benchmark.png)
-
+![](https://github.com/readmees/SAR_edge_benchmark/blob/main/Denoised%20BSDS500-speckled%20Benchmark.png?raw=true)
+_BSDS500-speckled Noisy Benchmark. The rows are sorted by ODS F1. The best results are high-
+lighted in bold, while the second best results are underlined._
+![](https://github.com/readmees/SAR_edge_benchmark/blob/main/Noisy%20BSDS500-speckled%20Benchmark.png?raw=true)
+_The performances of different methods on the Sentinel-1 Lelystad, ordered by F1 score_
+![](https://github.com/readmees/SAR_edge_benchmark/blob/main/Lely%20Benchmark.png?raw=true)
 Evaluating other edge detectors can be done in 4 steps.
 
 ## Step 1: Preparing the dataset
