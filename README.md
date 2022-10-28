@@ -1,32 +1,6 @@
 # SAR image edge detection benchmark suite 
 This GitHub repository is the benchmark suite of the [SAR image edge detection: review and benchmark experiments
 ](https://doi.org/10.1080/01431161.2022.2131480) paper. It contains all the information needed to evaluate and benchmark algorithms on the simulated SAR edge detection benchmark.
-When you use our work, please cite: 
-```
-@article{meester2022,
- author = {M. J. Meester and A. S. Baslamisli},
- title = {SAR Image Edge Detection: Review and Benchmark Experiments},
- journal = {International Journal of Remote Sensing},
- volume = {43},
- number = {14},
- year = {2022},
- pages = {5372-5438},
- doi = {10.1080/01431161.2022.2131480}
-}
-```
-
-Furthermore, when using the dataset, please also cite the original work that proposed it:
-```
-@article{liu2020,
- author = {C. Liu and F. Tupin and Y. Gousseau},
- title = {Training CNNs on Speckled Optical Dataset for Edge Detection in SAR Images},
- journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
- volume = {170},
- year = {2020},
- pages = {88-102},
- doi = {10.1016/j.isprsjprs.2020.09.018}
-}
-```
 
 The results of the evaluations on BSDS500-speckled are shown in the following table:  
 _BSDS500-speckled Benchmark. The rows are sorted by ODS F1. The best results are highlighted
@@ -54,3 +28,31 @@ For qualitative evaluations of the real SAR images, you can compare with the met
 ## Further information
 If you would like evaluate on Lely, simply run your edge detector on real_sar_data/Lely_input.png. And use the threshold found with [Evaluation of edge detectors.ipynb](https://github.com/readmees/SAR_edge_benchmark/blob/main/Evaluation%20of%20edge%20detectors.ipynb) in 'Step 3: Evaluating edge response maps - training', for obtaining a binary edge map. You can use this to calculate F1 score, see the Python code for these metrics [here](https://raw.githubusercontent.com/readmees/SAR_edge_benchmark/main/utils_confusion_matrix_analyser.py).
 If you have any questions, please contact me at contact@meesmeester.nl. If you would like your edge detector to be ran on the benchmark and have the results published on this page, please let me know.
+
+## Reference
+When you use our work, please cite: 
+```
+@article{meester2022,
+ author = {M. J. Meester and A. S. Baslamisli},
+ title = {SAR Image Edge Detection: Review and Benchmark Experiments},
+ journal = {International Journal of Remote Sensing},
+ volume = {43},
+ number = {14},
+ year = {2022},
+ pages = {5372-5438},
+ doi = {10.1080/01431161.2022.2131480}
+}
+```
+
+Furthermore, when using the dataset, please also cite the original work that proposed it:
+```
+@article{liu2020,
+ author = {C. Liu and F. Tupin and Y. Gousseau},
+ title = {Training CNNs on Speckled Optical Dataset for Edge Detection in SAR Images},
+ journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
+ volume = {170},
+ year = {2020},
+ pages = {88-102},
+ doi = {10.1016/j.isprsjprs.2020.09.018}
+}
+```
